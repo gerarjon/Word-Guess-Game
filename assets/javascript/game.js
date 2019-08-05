@@ -141,48 +141,17 @@ var game = {
     }
 };
 
-// // User's guess
-// document.onkeyup = (event) => {
-//     var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-//     console.log(chosenWord.indexOf(userGuess));
-
-//     // If user guess letter is right
-//     if (chosenWord.indexOf(userGuess) > -1) {
-//         // Push to right letter array 
-//         rightLetter.push(userGuess);
-//         // Replace blank with right letter
-//         blank[chosenWord.indexOf(userGuess)] = userGuess;
-//         console.log(rightLetter);
-//         // Checks to see if user word matches guesses 
-//         if (blank.join('') == chosenWord) {
-//             alert ('You Win');
-//         }
-//     } else {
-//         // Else push to wrong letter array
-//         wrongLetter.push(userGuess);
-//         console.log(wrongLetter);
-//         // If they get 5 wrong letters, they lose
-//         guessesLeft--;
-//         if (guessesLeft === 0) {
-//             alert('You lose');
-//         }
-
-//     }
-//     console.log(userGuess);
-// };
-
 // Main Process
 // ---------------------------------------
 // Functions will be called/Game will start here 
 
-// Starts the game
-game.start();
+// Button in HTML will start the game
 
 // Captures the player's key input
 document.onkeyup = function (event) {
 
     // This variable takes the key entered and converts the unicode to a string letter and lowercases it
-    letterGuessed = String.fromCharChode(event.keyCode).toLowerCase();
+    letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 
     // Checks if the letter is correct
     game.checkLetter(letterGuessed);
