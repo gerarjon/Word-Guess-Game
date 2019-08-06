@@ -5,27 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Reset CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <title>Word Guess Game</title>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+    <title>Twice Guess Game</title>
     
 </head>
 <body>
+    <div class="container">
+        <!-- Title Image -->
+        <img id="title-image" class="image-fluid" src="assets/images/twiceGameLogo.png" alt="Twice Game Title Image">
+        <!-- End Title Image -->
+    
+        <div class="row">
 
-    <h1>GUESS THE WORD</h1>
-    <button onclick="game.start()">Press to Start!</button>
-    <h2>Wins: <span id="winCounter"></span></h2>
-    <h2>Guesses: <span id="numOfGuesses"></span></h2>
-    <h2 id="wordBlanks"></h2>
-    <h2>Wrong Letters: <span id="wrongGuesses"></span></h2>
+            <!-- Game Stats -->
+            <div class="col-md-6">
+
+                <!-- Game Start -->
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                        <h3>Press the button to start playing!</h3>
+                        <a class="btn btn-primary btn-lg" href="#" role="button" onclick="game.start()">START</a>
+                    </div>
+                </div>
+                <!-- Win counter -->
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>Wins: <span id="winCounter"></span></h4> 
+                    </div>
+                </div>
+    
+                <!-- Number of Guesses -->
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>Guesses: <span id="numOfGuesses"></span></h4>
+                    </div>
+                </div>
+    
+                <!-- Word blanks/underscores (_ _ _ _ _)-->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Guess this word!</h4>
+                    </div>
+                    <div class="panel-body">
+                        <h4 id="wordBlanks">_ _ </h4>
+                    </div>
+                </div>
+    
+                <!-- Wrong Letters -->
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>Wrong Letters: <span id="wrongGuesses"></span></h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Images -->
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img class="img-fluid game-photo" src="assets/images/Twice.png" id="start-image" alt="Twice Group Photo">
+                        <img class="img-fluid game-photo" src="" id="twice-member" alt="Twice Member">
+
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+        
+        
+    </div>
 
 
-    <!-- JavaScipt -->
+
+    <!-- Gamae JavaScript -->
     <script src="assets/javascript/game.js"></script>
 </body>
 </html>

@@ -11,7 +11,17 @@
 // ---------------------------------------------
 
 // List of Words
-var word = ["one", "two", "three", "four", "five", "six", "seven", "eight"];
+var word = [
+    "tzuyu", 
+    "sana", 
+    "jihyo", 
+    "nayeon", 
+    "momo", 
+    "dahyun", 
+    "jeongyeon", 
+    "chaeyoung", 
+    "mina"
+];
 
 // The chosen word will be held here
 var chosenWord = ""; 
@@ -20,7 +30,7 @@ var chosenWord = "";
 var lettersInChosenWord= [];
 
 // The number of blanks/underscores that are in the chosen word will be stored in this array 
-var blank = 0;
+var blank = 0; // _ _ _ _ 
 
 // The correct letter and blanks will be held in this array 
 var rightLetter = [];
@@ -33,6 +43,12 @@ var guessesLeft = 5;
 
 // Score 
 var wins = 0;
+
+// Gets image of html
+var getImage = document.getElementById("twice-member");
+
+// Hides other images
+getImage.style.cssText = "display: none";
 
 
 
@@ -79,6 +95,13 @@ var game = {
 
         // Clears the wrong guesses form the previous round
         document.getElementById("wrongGuesses").innerHTML = wrongLetter.join(" ");
+
+        // Make sure the hangman image is cleared
+        document.getElementById("start-image").src = "assets/images/Twice.png";
+
+        // Hides other images
+        document.getElementById("start-image").style.cssText = "display: none";
+
     },
 
     // Function that will compare the letters in the word to the letters that the player chooses
@@ -106,13 +129,14 @@ var game = {
         } else {
             // If wrong, pushes the wrong letter into the wrong letter array
             wrongLetter.push(letter);
-            // substracts the number of guesses by 1
+
+            // Subtracts # of guesses by 1
             guessesLeft--;
         };
     },
 
     // Function that will run after each guess is made
-    roundComplete: function() {
+    updateScore: function() {
         // logs how many wins and guesses are left
         console.log(`Win(s): ${wins} | Guesses Left: ${guessesLeft}`); //testing
 
@@ -120,11 +144,21 @@ var game = {
         document.getElementById("numOfGuesses").innerHTML = guessesLeft;
         document.getElementById("wordBlanks").innerHTML = rightLetter.join(" ");
         document.getElementById("wrongGuesses").innerHTML = wrongLetter.join(" ");
+    },
 
+    // Function that checks if they won
+    checkWin: function() {
         // If all the letters in the word are correct
         if (lettersInChosenWord.toString() == rightLetter.toString()) {
+
+            // Displays winning image
+            getImage.src = "assets/images/TwiceWin.jpg"
+            getImage.style.cssText = "display:block";
+
+
             wins++; // adds to wins counter
             alert("You win!");
+
 
             // Updates the # of wins in the HTML
             document.getElementById("winCounter").innerHTML = wins;
@@ -133,11 +167,15 @@ var game = {
             this.start();
         } else if (guessesLeft == 0) {
             // Alerts the player that they lose
-            alert("You're a big loser, idiot");
+            alert("You lose :(");
+
+            // Displays losing image
+            getImage.src = "assets/images/TwiceSad.png";
+            getImage.style.cssText = "display:block";
 
             // restarts the game
             this.start();
-        }
+        };
     }
 };
 
@@ -157,7 +195,10 @@ document.onkeyup = function (event) {
     game.checkLetter(letterGuessed);
 
     // Completes the round
-    game.roundComplete();
+    game.updateScore();
+
+    // Win or Lose?
+    game.checkWin();
 };
 
 
