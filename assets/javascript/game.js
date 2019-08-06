@@ -169,6 +169,8 @@ var game = {
             // Alerts the player that they lose
             alert("You lose :(");
 
+            alert("The word was " + chosenWord);
+
             // Displays losing image
             getImage.src = "assets/images/TwiceSad.png";
             getImage.style.cssText = "display:block";
