@@ -13,7 +13,7 @@ Project is created with:
 * Hosted by Github
 
 ## Compatibility
-Currently compatible with Firefox and Chrome browsers. Not compatitle on mobile devices.
+Currently compatible with Firefox and Chrome browsers. Not compatible on mobile devices.
 
 ## Acknowledgements
 All images and names belong to Twice and JYP Entertainment.
