@@ -4,9 +4,6 @@
 This is a "hangman" style game that takes the player's key input and replaces the underscores on the screen. The player has 5 tries to guess the name of the Twice member. 
 * [Deployed](https://gerarjon.github.io/Word-Guess-Game/#)
 
-## Preview
-![Preview](https://photos.app.goo.gl/T81C1DDy7D4MsbP76)
-
 ## Technologies 
 Project is created with: 
 * HTML 5
